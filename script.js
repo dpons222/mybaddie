@@ -9,9 +9,7 @@ document.getElementById('date-form').addEventListener('submit', function (e) {
   const confirmation = document.getElementById('confirmation');
   const userNote = document.getElementById('user-note');
 
-  // Set confirmation message
-  userNote.innerText = `You picked: ${day} at ${time} for ${activity}. 💖\n"${message}"`;
-
+  
   confirmation.classList.remove('hidden');
 
   // Fire confetti
