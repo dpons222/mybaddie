@@ -1,35 +1,23 @@
-// Change this to her name
-const herName = "Babe";
-
-// Update greeting dynamically
-document.getElementById('her-name').textContent = herName;
-
 document.getElementById('date-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
   const day = document.getElementById('day').value;
   const time = document.getElementById('time').value;
   const activity = document.getElementById('activity').value;
-  const note = document.getElementById('message').value.trim();
+  const message = document.getElementById('message').value;
 
-  console.log(`🌸 ${herName} picked: ${day}, ${time}, ${activity}`);
-  if (note) console.log(`💬 Note: "${note}"`);
+  const confirmation = document.getElementById('confirmation');
+  const userNote = document.getElementById('user-note');
 
-  alert(`Aww you picked: ${day}, ${time}, ${activity} 💖`);
+  // Set confirmation message
+  userNote.innerText = `You picked: ${day} at ${time} for ${activity}. 💖\n"${message}"`;
 
-  // Show note if there's one
-  if (note) {
-    document.getElementById('user-note').textContent = `Your note: “${note}”`;
-  }
+  confirmation.classList.remove('hidden');
 
-  // Hide form, show confirmation
-  document.getElementById('date-form').classList.add('hidden');
-  document.getElementById('confirmation').classList.remove('hidden');
-
-  // Confetti burst 🎉
+  // Fire confetti
   confetti({
     particleCount: 150,
-    spread: 80,
-    origin: { y: 0.6 }
+    spread: 70,
+    origin: { y: 0.6 },
   });
 });
