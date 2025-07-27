@@ -1,50 +1,52 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Our Cute Date</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-  <script>
-    (function(){
-      emailjs.init("JiVNBGLnbMJiFWWRE");
-    })();
-  </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Cute Date</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function() {
+            emailjs.init("dpons222@gmail.com");
+        })();
+    </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Pick Our Date 💕</h1>
-    <form id="date-form">
-      <label for="day">Pick a day:</label>
-      <select id="day">
-        <option value="Friday">Friday</option>
-        <option value="Saturday">Saturday</option>
-        <option value="Sunday">Sunday</option>
-      </select><label for="time">Pick a time:</label>
-  <select id="time">
-    <option value="Afternoon">Afternoon</option>
-    <option value="Evening">Evening</option>
-    <option value="Night">Night</option>
-  </select>
-
-  <label for="activity">Pick a vibe:</label>
-  <select id="activity">
-    <option value="Coffee">Coffee ☕</option>
-    <option value="Dinner">Dinner 🍝</option>
-    <option value="Picnic">Picnic 🌳</option>
-  </select>
-
-  <label for="message">Leave me a note:</label>
-  <textarea id="message" placeholder="Excited to see you! 💌"></textarea>
-
-  <button type="submit">Set the date 💖</button>
-</form>
-
-<div id="confirmation" class="hidden">
-  <h2>Yay! Can't wait 💕</h2>
-</div>
-
-  </div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Pick Our Date</h1>
+        <form id="date-form">
+            <label for="day">Pick a day:</label>
+            <select id="day" required>
+                <option value="Sunday, Aug 3">Sunday, Aug 3</option>
+                <option value="Saturday, Aug 9">Saturday, Aug 9</option>
+                <option value="Sunday, Aug 10">Sunday, Aug 10</option>
+            </select>
+            <label for="time">Pick a time:</label>
+            <select id="time" required>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+                <option value="Night">Night</option>
+            </select>
+            <label for="activity">Pick the vibe:</label>
+            <select id="activity">
+                <option value="Coffee">Coffee ☕️</option>
+                <option value="Dinner">Dinner 🍝</option>
+                <option value="Picnic">Picnic 🧺</option>
+                <option value="Surprise me">Surprise me</option>
+            </select>
+            <label for="message">Leave me a note:</label>
+            <textarea id="message" rows="3" placeholder="Excited to see you! ❤️"></textarea>
+            <button type="submit">Set the date ❤️</button>
+        </form>
+        <button type="submit">I'm in! 🎉</button>
+        <div id="confirmation" class="hidden">
+            <h2>Yay! Can't wait 💕</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
