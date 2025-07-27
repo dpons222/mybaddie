@@ -1,5 +1,5 @@
 // 💌 Initialize EmailJS
-emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your real public key
+emailjs.init("JiVNBGLnbMJiFWWRE");
 
 document.getElementById('date-form').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -11,7 +11,7 @@ document.getElementById('date-form').addEventListener('submit', function (e) {
   const message = document.getElementById('message').value;
 
   // 📨 Send email via EmailJS
-  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+  emailjs.send("service_email", "__ejs-test-mail-service__", {
     day: day,
     time: time,
     activity: activity,
