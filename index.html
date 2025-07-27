@@ -1,55 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pick a Date 💖</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-</head>
-<body>
-  <div class="container">
-    <h1>Hey <span id="her-name">Babe</span> 👋</h1>
+// 💌 Initialize EmailJS
+emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your real public key
 
-    <form id="date-form">
-      <label for="day">Pick a day:</label>
-      <select id="day" required>
-        <option value="">--Choose one--</option>
-        <option value="Sunday, Aug 3">Sunday, Aug 3</option>
-        <option value="Saturday, Aug 9">Saturday, Aug 9</option>
-        <option value="Sunday, Aug 10">Sunday, Aug 10</option>
-      </select>
+document.getElementById('date-form').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-      <label for="time">Pick a time:</label>
-      <select id="time" required>
-        <option value="">--Choose one--</option>
-        <option value="Morning">Morning</option>
-        <option value="Afternoon">Afternoon</option>
-        <option value="Evening">Evening</option>
-      </select>
+  // 💖 Grab form values
+  const day = document.getElementById('day').value;
+  const time = document.getElementById('time').value;
+  const activity = document.getElementById('activity').value;
+  const message = document.getElementById('message').value;
 
-      <label for="activity">Pick the vibe:</label>
-      <select id="activity" required>
-        <option value="">--Choose one--</option>
-        <option value="Coffee ☕">Coffee ☕</option>
-        <option value="Walk 🌳">Walk 🌳</option>
-        <option value="Dinner 🍝">Dinner 🍝</option>
-        <option value="Surprise me 🎁">Surprise me 🎁</option>
-      </select>
+  // 📨 Send email via EmailJS
+  emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+    day: day,
+    time: time,
+    activity: activity,
+    message: message,
+  })
+  .then(function(response) {
+    console.log("Email sent successfully!", response.status, response.text);
 
-      <label for="message">Insert cute note here? 💬</label>
-      <textarea id="message" rows="3" placeholder="Like 'You’re lucky you’re cute 😘'..."></textarea>
+    // ✅ Show confirmation section
+    document.getElementById('date-form').classList.add('hidden');
+    document.getElementById('confirmation').classList.remove('hidden');
+    document.getElementById('user-note').innerText = `"${message}"`;
 
-      <button type="submit">I'm in! 💌</button>
-    </form>
-
-    <div id="confirmation" class="hidden">
-      <h2> Ayee 🥳</h2>
-      <p> That's my girl </p>
-      <p id="user-note"></p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+    // 🎉 Confetti for the win
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }, function(error) {
+    console.error("Email failed to send...", error);
+    alert("Oops! Something went wrong. Try again later.");
+  });
+});
