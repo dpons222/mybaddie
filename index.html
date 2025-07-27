@@ -11,7 +11,7 @@ document.getElementById('date-form').addEventListener('submit', function (e) {
   const message = document.getElementById('message').value;
 
   // 📨 Send email via EmailJS
-  emailjs.send("service_email", "__ejs-test-mail-service__", {
+  emailjs.send("service_email", "template_apdu229", {
     day: day,
     time: time,
     activity: activity,
