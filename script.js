@@ -13,8 +13,6 @@ document.getElementById('date-form').addEventListener('submit', function (e) {
 
   console.log(`🌸 ${herName} picked: ${day}, ${time}, ${activity}`);
 
-  alert(`Aww you picked: ${day}, ${time}, ${activity} 💖`);
-
   // Hide form, show confirmation
   document.getElementById('date-form').classList.add('hidden');
   document.getElementById('confirmation').classList.remove('hidden');
