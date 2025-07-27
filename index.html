@@ -1,37 +1,55 @@
-<form id="date-form">
-  <label for="day">Pick a day:</label>
-  <select id="day" required>
-    <option value="">--Choose one--</option>
-    <option value="Sunday, Aug 3">Sunday</option>
-    <option value="Saturday, Aug 9">Saturday</option>
-    <option value="Sunday, Aug 10">Sunday</option>
-  </select>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pick a Date 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Hey <span id="her-name">Babe</span> 👋</h1>
 
-  <label for="time">Pick a time:</label>
-  <select id="time" required>
-    <option value="">--Choose one--</option>
-    <option value="Morning">Morning</option>
-    <option value="Afternoon">Afternoon</option>
-    <option value="Evening">Evening</option>
-  </select>
+    <form id="date-form">
+      <label for="day">Pick a day:</label>
+      <select id="day" required>
+        <option value="">--Choose one--</option>
+        <option value="Friday, Aug 3">Friday</option>
+        <option value="Saturday, Aug 9">Saturday</option>
+        <option value="Sunday, Aug 10">Sunday</option>
+      </select>
 
-  <label for="activity">Pick the vibe:</label>
-  <select id="activity" required>
-    <option value="">--Choose one--</option>
-    <option value="Coffee ☕">Coffee ☕</option>
-    <option value="Walk 🌳">Walk 🌳</option>
-    <option value="Dinner 🍝">Dinner 🍝</option>
-    <option value="Surprise me 🎁">Surprise me 🎁</option>
-  </select>
+      <label for="time">Pick a time:</label>
+      <select id="time" required>
+        <option value="">--Choose one--</option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+      </select>
 
-  <label for="message">Insert cute note here? 💬</label>
-  <textarea id="message" rows="3" placeholder="Like 'You’re lucky you’re cute 😘'..."></textarea>
+      <label for="activity">Pick the vibe:</label>
+      <select id="activity" required>
+        <option value="">--Choose one--</option>
+        <option value="Coffee ☕">Coffee ☕</option>
+        <option value="Walk 🌳">Walk 🌳</option>
+        <option value="Dinner 🍝">Dinner 🍝</option>
+        <option value="Surprise me 🎁">Surprise me 🎁</option>
+      </select>
 
-  <button type="submit">I'm in! 💌</button>
-</form>
+      <label for="message">Insert cute note here? 💬</label>
+      <textarea id="message" rows="3" placeholder="Like 'You’re lucky you’re cute 😘'..."></textarea>
 
-<div id="confirmation" class="hidden">
-  <h2>Yay! 🥳</h2>
-  <p>Can’t wait! I’ll text you with the details 💬</p>
-  <p id="user-note"></p>
-</div>
+      <button type="submit">I'm in! 💌</button>
+    </form>
+
+    <div id="confirmation" class="hidden">
+      <h2>Yay! 🥳</h2>
+      <p>Can’t wait! I’ll text you with the details 💬</p>
+      <p id="user-note"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
