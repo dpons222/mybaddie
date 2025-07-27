@@ -1,6 +1,6 @@
 body {
   background: #fff0f5;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,7 +29,7 @@ form {
   margin-top: 1em;
 }
 
-select, button {
+select, button, textarea {
   padding: 0.6em;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -42,7 +42,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   animation: pulse 2s infinite;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 button:hover {
@@ -62,12 +62,4 @@ button:hover {
   0% { transform: scale(1); }
   50% { transform: scale(1.1); }
   100% { transform: scale(1); }
-}
-
-textarea {
-  padding: 0.6em;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1em;
-  resize: vertical;
 }
